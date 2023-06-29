@@ -1,5 +1,5 @@
 package hust.soict.globalict.test.cart.CartTest;
-import hust.soict.globalict.aims.cart.Cart.Cart;
+import hust.soict.globalict.aims.cart.Cart;
 import hust.soict.globalict.media.DigitalVideoDisc;
 public class CartTest {
 	public void main(String[] args)

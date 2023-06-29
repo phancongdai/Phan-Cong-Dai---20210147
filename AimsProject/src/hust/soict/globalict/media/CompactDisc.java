@@ -3,6 +3,8 @@ package hust.soict.globalict.media;
 import java.util.ArrayList;
 import java.util.List;
 
+import hust.soict.globalict.media.Track;
+
 public class CompactDisc extends Disc implements Playable {   
     private String artist;
     private List<Track>tracks = new ArrayList<Track>();

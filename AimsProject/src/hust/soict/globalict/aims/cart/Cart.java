@@ -1,13 +1,15 @@
-package hust.soict.globalict.aims.cart.Cart;
+package hust.soict.globalict.aims.cart;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import hust.soict.globalict.media.DigitalVideoDisc;
 import hust.soict.globalict.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Cart {
+    private ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 	public static final int MAX_NUMBERS_ORDERED = 20;
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
-
     public void addMedia(Media media){
         if(itemsOrdered.size()==MAX_NUMBERS_ORDERED) System.out.println("Cart is full");
         else{
@@ -53,5 +55,17 @@ public class Cart {
         System.out.println("Total cost is: "+ this.totalCost());
         System.out.println("***********************CART***********************");
 
+    }
+     public Media searchMediaByName(String titl) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Name of media?");
+        titl= sc.nextLine();
+        for(Media x: itemsOrdered) {
+            if(x.getTitle().equals(titl)) return x;
+        }
+        return null;
+    }
+    public ObservableList<Media> getItemsOrder() {
+        return itemsOrdered;
     }
 }

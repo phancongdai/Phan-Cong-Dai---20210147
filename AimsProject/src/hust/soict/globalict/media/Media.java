@@ -41,17 +41,20 @@ public abstract class Media {
     }
     public Media(String title) {
         this.title = title;
-
     }
     public Media(String title, String category, float cost) {
         this.title = title;
         this.category = category;
         this.cost = cost;
     }
+    public String toString() {
+        return "The media "+ this.getTitle() + " - " +this.getCategory()+ " - " +this.getCost();
+    }
     public static void main(String arg[]) {
         DigitalVideoDisc dvd = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
         CompactDisc cd = new CompactDisc("Hello", "Ballad", 5f);
         Book book = new Book("Jungle", "Alan Kay", 12f);
+        Book k = new Book("okko");
 
         List<Media> media = new ArrayList<Media>();
         media.add(dvd);
@@ -62,5 +65,5 @@ public abstract class Media {
             System.out.println(item.toString());
         }      
     }
-    
+
 }
